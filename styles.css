@@ -1,0 +1,98 @@
+/*BASE STYLES */
+
+html, body{
+    height: 100%;
+    width:100%;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  .grass, .sky, .road{
+    position: relative;
+  }
+  
+  .sky{
+    height: 40%;
+    background: skyblue;
+  }
+  
+  .grass{
+    height: 30%;
+    background: seagreen;
+  }
+  
+  .road{
+    height: 30%;
+    background: dimgrey;
+    box-sizing: border-box;
+    border-top: 10px solid grey;
+    border-bottom: 10px solid grey;
+    width: 100%;
+  }
+  
+  .lines{
+    box-sizing: border-box;
+    border: 2px dashed #fff;
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+  }
+  .cloud{
+    position: absolute;
+  }
+  /*ELEMENTS TO ANIMATE */
+  .biker1{
+    width: 140px;
+    position: absolute;
+    top: -40px;
+    left: -20px;  
+    animation-name: ride;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  .biker2{
+    width: 100px;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    animation: ride 5s both infinite linear reverse;
+  }
+  .biker3{
+    width:100px;
+    position: absolute;
+    top: -10px;
+    left:0px;
+    animation: ride 8s both infinite linear;
+  }
+  .biker4{
+    width:100px;
+    position: absolute;
+    top: 80px;
+    left:0px;
+    animation: ride 6s both infinite linear reverse;
+  }
+  .cloud:first-child{
+    width:200px;
+    top:100px;
+    opacity: 0.5;
+    animation: wind 80s linear reverse infinite;
+  }
+  .cloud:last-child{
+    width: 300px;
+    top:0px;
+    animation: wind 50s linear reverse infinite;
+  }
+  
+  /*KEYFRAMES*/
+  @keyframes ride{
+    from{transform: translateX(-200px);}
+    to{transform: translateX(1500px);}
+  }
+  @keyframes wind{
+    from{left: -200px;}
+    to{left: 100%;}
+  }
+  
